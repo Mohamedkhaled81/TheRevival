@@ -1,0 +1,23 @@
+body {
+    background-color: aquamarine;
+}
+
+.center {
+    text-align: center;
+}
+
+.text-size-med {
+    font-size: 20px;
+}
+
+.random-color {
+    color: blue;
+}
+
+.far-left {
+    text-align: left;
+}
+
+.far-right {
+    text-align: right;
+}
