@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register-Page</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div>
+        <h2><u>Registeration Form</u></h2>
+        <table>
+        <form action="https://formkeep.com/f/8c2eca5bbd4f"
+        accept-charset="UTF-8"
+        enctype="multipart/form-data"
+        method="POST">                <tr>
+                    <td>
+                        <label class="label">First Name</label>
+                    </td>
+                    <td colspan="3">
+                        <input name="FirstName" class="input" type="text" placeholder="Enter Your First Name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label">Last Name</label>
+                    </td>
+                    <td colspan="3">
+                        <input name="LastName" class="input" type="text" placeholder="Enter Your Last Name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label">Email</label>
+                    </td>
+                    <td colspan="3">
+                        <input name="Email" class="input" type="email" placeholder="Enter Your Email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label">Password</label>
+                    </td>
+                    <td colspan="3">
+                        <input name="Password" class="input" type="password" placeholder="Enter Your Password">
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        <label class="label">Gender</label>
+                    </td>
+                    <td colspan="3">
+                        <input name="Gender" value="Male" id="male" type="radio">
+                        <label for="male"><b>Male</b></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input name="Gender" value="Female" id="female" type="radio">
+                        <label for="female"><b>Female</b></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label">Country</label>
+                    </td>
+                    <td colspan="3">
+                        <select class="input" name="Country">
+                            <option value="None">Select a Country..</option>
+                            <optgroup label="Africa">
+                                <option value="Egypt">Egypt</option>
+                                <option value="Sudan">Sudan</option>
+                                <option value="Libya">Libya</option>
+                                <option value="Tunisia">Tunisia</option>
+                                <option value="Mororco">Moroco</option>
+                            </optgroup>
+                            <optgroup label="Europe" disabled>
+                                <option value="Italy">Italy</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="Spain">Spain</option>
+                            </optgroup>
+                            <optgroup label="Asia">
+                                <option value="Palestine">Palestine</option>
+                                <option value="South Korea">South Korea</option>
+                                <option value="India">India</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label">Birthday</label>
+                    </td>
+                    <td colspan="3">
+                        <input name="BirthDate" class="input" type="date">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="mainLabel">
+                        <label ><u>Interests</u></label>
+                    </td>
+                </tr>
+                <tr class="borderless">
+                    <td class="borderless">
+                        <input type="checkbox" id="Sports" name="Sports"/>
+                        <label for="Sports">Sports</label>
+                    </td>
+                    <td class="borderless">
+                        <input type="checkbox" id="Music" name="Music"/>
+                        <label for="Music">Music</label>  
+                    </td>
+                    <td class="borderless">
+                        <input type="checkbox" id="Fashion" name="Fashion"/>
+                        <label for="Fashion">Fashion</label>
+                    </td>
+                </tr>
+                <tr class="borderless">
+                    <td class="borderless">
+                        <input type="checkbox" id="Reading" name="Reading"/>
+                        <label for="Reading">Reading</label>   
+                    </td>
+                    <td class="borderless">
+                        <input type="checkbox" id="Shopping" name="Shopping"/>
+                        <label for="Shopping">Shopping</label>  
+                    </td>
+                    <td class="borderless">
+                        <input type="checkbox"id="Movies" name="Movies"/>
+                        <label for="Movies">Movies</label>  
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="mainLabel">
+                        <label ><u>Bio</u></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <textarea name="Bio" cols="50" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input style="padding: 10px; margin-left: 150px;" type="submit" value="Register">
+                        <input style="padding: 10px; margin-left: 10px;" type="reset" value="Clear...">
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </div>
+</body>
+</html>

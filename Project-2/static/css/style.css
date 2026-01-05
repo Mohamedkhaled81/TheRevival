@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(169, 211, 197);
+}
+
+div h2 {
+    text-align: center;
+}
+
+div table {
+    margin: auto;
+}
+
+table, td {
+    border-color: black;
+    border-width: 4px;
+    border-style: solid;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+textarea {
+  resize: none;
+}
+
+.input {
+    width: 20ic;
+}
+
+.label {
+    padding-right: 1ic;
+}
+
+.mainLabel {
+    text-align: center;
+}
+
+.buttons {
+    margin: auto;
+}
+
+.borderless {
+    border: none;
+}
+
+#enter-img {
+    margin: auto;
+    width: 15cm;
+}
+
+legend {
+    color:red;
+}
