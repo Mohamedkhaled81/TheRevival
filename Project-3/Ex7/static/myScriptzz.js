@@ -17,7 +17,7 @@ function validateMode(value) {
 function getUserInputs() {
     strtVal = Number(prompt("Enter the Starting Value.."));
     lstVal = Number(prompt("Enter the Last Value..")); 
-    mode = prompt("Enter the mode < odd, even, no >..").toLowerCase();
+    mode = prompt("Enter the mode < odd, even, no >..");
 }
 
 function validateInputData() {
@@ -29,52 +29,36 @@ function validateInputData() {
 }
 
 function handleEven() {
-    if (strtVal <= lstVal) {
-        for(let currVal = strtVal;currVal <= lstVal; currVal++) {
-            if(currVal % 2 == 0) {
-                display += ` ${currVal}`;
-                sum += currVal;
-            }
-        }
-    }else {
-        for(let currVal = strtVal;currVal >= lstVal; currVal--) {
-            if(currVal % 2 == 0) {
-                display += ` ${currVal}`;
-                sum += currVal;
-            }
+    const step = strtVal <= lstVal ? 1 : -1;
+    for (let currVal = strtVal;
+        step === 1 ? currVal <= lstVal : currVal >= lstVal;
+        currVal += step) {
+        if (currVal % 2 === 0) {
+            display += ` ${currVal}`;
+            sum += currVal;
         }
     }
 }
 
 function handleOdd() {
-    if (strtVal <= lstVal) {
-        for(let currVal = strtVal;currVal <= lstVal; currVal++) {
-            if(currVal % 2 != 0) {
-                display += ` ${currVal}`;
-                sum += currVal;
-            }
-        }
-    }else {
-        for(let currVal = strtVal;currVal >= lstVal; currVal--) {
-            if(currVal % 2 != 0) {
-                display += ` ${currVal}`;
-                sum += currVal;
-            }
+    const step = strtVal <= lstVal ? 1 : -1;
+    for(let currVal = strtVal;
+        step === 1 ? currVal <= lstVal : currVal >= lstVal;
+        currVal += step) {
+        if(currVal % 2 != 0) {
+            display += ` ${currVal}`;
+            sum += currVal;
         }
     }
 }
 
 function handleNo() {
-    if (strtVal <= lstVal) {
-        for(let currVal = strtVal;currVal <= lstVal; currVal++) {
-            display += ` ${currVal}`;
-            sum += currVal;
-        }
-    }else {
-        for(let currVal = strtVal;currVal >= lstVal; currVal--) {
-            display += ` ${currVal}`;
-            sum += currVal;
-        }
+    const step = strtVal <= lstVal ? 1 : -1;
+    for(let currVal = strtVal;
+        step === 1 ? currVal <= lstVal : currVal >= lstVal;
+        currVal += step) {
+        display += ` ${currVal}`;
+        sum += currVal;
     }
 }
 

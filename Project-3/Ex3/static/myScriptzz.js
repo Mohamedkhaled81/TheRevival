@@ -5,4 +5,4 @@ function getMax(fstVal, secVal) {
     return (fstVal > secVal) ? fstVal : secVal; 
 }
 
-console.log(`The max value is: ${getMax(fstVal, secVal)}`);
+console.log(`The max value is: ${getMax(fstOprand, scndOprand)}`);
