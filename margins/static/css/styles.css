@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+
+.box {
+    background-color: blueviolet;
+    width: 100px;
+    height: 100px;
+    margin:auto;
+}
+
+.one {
+    background-color: red;
+    margin-bottom: 100px;
+
+}
+
+.two {
+    background-color: blue;
+    margin-top: 100px;
+
+}
+
+.three {
+    background-color: yellow;
+    /*margin-left: auto; gives all left making this attached to the right**/
+}
