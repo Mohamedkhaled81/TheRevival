@@ -1,27 +1,41 @@
+/*
+
+# Removing all Defaults
+
+* { 
+    margin: 0;
+    padding: 0;
+
+    # Sets the whole width of the element < Including - padding - border - content >
+    box-sizing: border-box;
+}
+*/
+
+
 body {
     margin: 0;
 }
 
 .box {
-    background-color: blueviolet;
-    width: 100px;
-    height: 100px;
-    margin:auto;
+    width: 400px;
+    margin:100px auto;
+    background-color: aqua;
+    padding-top: 10px;
 }
 
 .one {
     background-color: red;
-    margin-bottom: 100px;
-
+    margin-top: 300px;
+    height: 30px;
 }
 
 .two {
     background-color: blue;
-    margin-top: 100px;
-
+    height: 30px;
 }
 
 .three {
     background-color: yellow;
+    height: 30px;
     /*margin-left: auto; gives all left making this attached to the right**/
 }
