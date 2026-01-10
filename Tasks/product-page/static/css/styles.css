@@ -14,11 +14,12 @@
 }
 
 body {
-    background-color: blanchedalmond;
     font-family: 'Wizzard';
+    background-color: rgb(255, 240, 217);
 }
 
 .card {
+    background-color: blanchedalmond;
     width: 1000px;
     margin:100px auto;
     border-radius: 7px;
