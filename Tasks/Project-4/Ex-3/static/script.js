@@ -28,7 +28,7 @@ function getLongestWrd(string) {
     let longestWrd = wrds[0], maxLen = wrds[0].length;
     for(let indx = 1; indx < wrds.length; indx ++) {
         if (maxLen < wrds[indx].length) {
-            maxLen = wrds[indx].length
+            maxLen = wrds[indx].length;
             longestWrd = wrds[indx];
         }
     }
