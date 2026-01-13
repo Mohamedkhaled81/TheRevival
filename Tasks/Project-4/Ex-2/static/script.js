@@ -1,13 +1,3 @@
-// Validation Functions
-
-function validateChrLen(chr) {
-    if (chr.length !== 1) {
-        alert("You Should Enter One Specific Character!")
-        return false;
-    }
-    return true;
-}
-
 function validateStrNotEmpty(str) {
     if (!(str.length)) {
         alert("Your String is Empty!");
@@ -24,9 +14,6 @@ function validateInputNotNull(value) {
     return true
 }
 
-
-// Get User Input Functions
-
 function getUserInput() {
     let errFlag = false, str;
     do {
@@ -36,42 +23,28 @@ function getUserInput() {
     return str;
 }
 
-function getUserChar() {
-    let errFlag = false, chr;
-    do {
-        chr = prompt("Enter the character required to be counted..");
-        errFlag = !(validateInputNotNull(chr)) || !(validateChrLen(chr));        
-    }while(errFlag)
-    return chr;
-}
-
 function isCaseInSen() {
     return confirm("Do you want to consider Case insensitive?")
 }
 
-
-// Counting Logic
-
-function handleCount(input, chr, mode) {
-    const ignoreCase = mode ? "i" : ""; 
-    const regex = new RegExp(chr, "g"+ignoreCase);
-    
-    let count = 0;
-    while (regex.exec(input) !== null) {
-        count += 1
+function isPalindrome(wrd){
+    let strt = 0, lst = wrd.length - 1
+    while(strt < lst) {
+        if (wrd[strt] !== wrd[lst]) {
+            return false;
+        }
+        strt += 1;
+        lst -= 1;
     }
-    return count;
+    return true;
 }
 
-
-// Srcipt-Seq :D
-
 function runScript() {
-    const str = getUserInput();
-    const chr = getUserChar();
+    let wrd = getUserInput();
     const mode = isCaseInSen();
-    const result = handleCount(str, chr, mode);
-    console.log("Number of your character ", chr, " is ", result);
+    wrd = mode ? wrd.toLowerCase(): wrd;
+    const flag = isPalindrome(wrd);
+    console.log("The Given string is", flag ? "palindrome..": "not palindrome..")
 }
 
 runScript();
