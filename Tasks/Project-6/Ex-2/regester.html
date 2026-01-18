@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register-Page</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="./greeting.html" method="get">
+        <fieldset>
+          <legend>Regesteration Form</legend>
+          <div class="form-content">
+            <div class="label">
+              <label for="title" >Title:</label>
+            </div>
+            <input id="title" class="input" type="text" name="title" placeholder="Enter your Title" required/>
+            <div class="label">
+              <label for="firstName">First Name:</label>
+            </div>
+            <input id="firstName" class="input" type="text" name="firstName" placeholder="Enter your First-Name" required/>
+            <div class="label">
+              <label for="lastName">Last Name:</label>
+            </div>
+            <input id="lastName" class="input" type="text" name="lastName" placeholder="Enter your Last-Name" required/>
+            <div class="label">
+              <label for="email">Email:</label>
+            </div>
+            <input id="email" class="input" type="email" name="email" placeholder="Enter your Email" required/>
+            <div class="label">
+              <label for="password">Password:</label>
+            </div>
+            <input id="password" class="input" type="password" name="password" placeholder="Enter your Password" required/>
+            <div class="label">
+              <label for="mobile">Mobile:</label>
+            </div>
+            <input id="mobile" class="input" type="text" name="mobile" placeholder="Enter your Mobile-Number" required/>
+            <div class="label">
+              <label for="Address">Address:</label>
+            </div>
+            <input id="Address" class="input" type="text" name="Address" placeholder="Enter your Address" required/>
+            <div class="label">
+              <label>Gender:</label>
+            </div>
+            <input id="male" type="radio" name="gender" value="Male" required/>
+            <label for="male">Male</label>
+            <input id="female" type="radio" name="gender" value="Female"/>
+            <label for="female">Female</label>
+            <div class="button-container">
+              <input class="button" type="submit" value="Sign Up" />
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

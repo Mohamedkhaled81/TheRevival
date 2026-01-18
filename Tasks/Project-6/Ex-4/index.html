@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/style.css">
+    <title>Marbel</title>
+</head>
+<body>
+    <div id="container">
+        <img src="./static/marbels/marble3.jpg" onmouseover="freezMarbles()" onmouseleave="flowFaster()">
+        <img src="./static/marbels/marble1.jpg" onmouseover="freezMarbles()" onmouseleave="flowFaster()">
+        <img src="./static/marbels/marble1.jpg" onmouseover="freezMarbles()" onmouseleave="flowFaster()">
+        <img src="./static/marbels/marble1.jpg" onmouseover="freezMarbles()" onmouseleave="flowFaster()">
+        <img src="./static/marbels/marble1.jpg" onmouseover="freezMarbles()" onmouseleave="flowFaster()">
+        <img src="./static/marbels/marble1.jpg" onmouseover="freezMarbles()" onmouseleave="flowFaster()">
+    </div>
+<script>
+    let timer = null, duration = 1000;
+    let marbelElems = document.images;
+    let marbelLength = marbelElems.length
+    let nxtPos = 0, lstPos = marbelLength - 1;
+
+
+    function flowMarbels() {
+        timer = setInterval(mveMarble, duration);
+    }
+
+    function mveMarble() {
+        nxtPos = (nxtPos + 1) % marbelLength;
+        lstPos = (lstPos + 1) % marbelLength;
+        marbelElems[nxtPos].src = "./static/marbels/marble3.jpg";
+        marbelElems[lstPos].src = "./static/marbels/marble1.jpg";
+    }
+
+    function freezMarbles() {
+        clearInterval(timer);
+    }
+
+    function flowFaster() {
+        duration -= 200;
+        timer = setInterval(mveMarble, duration);
+    }
+
+    flowMarbels();
+</script>
+</body>
+</html>

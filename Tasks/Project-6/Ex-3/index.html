@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+  </head>
+  <body>
+    <h1>Showing Pics</h1>
+    <hr />
+    <input type="button" value="Next-Pic" onclick="getNextImg()" />
+    <input type="button" value="Slide-Show" onclick="strtShow()" />
+    <input type="button" value="Stop" onclick="stpShow()" />
+    <input type="button" value="Previous" onclick="getPrevImg()" />
+    <br />
+    <br />
+    <br />
+    <img src="./static/SlideShow/1.jpg" alt="slide-image" />
+    <script>
+        let imgs = [
+            "./static/SlideShow/1.jpg",
+            "./static/SlideShow/2.jpg",
+            "./static/SlideShow/3.jpg",
+            "./static/SlideShow/4.jpg",
+            "./static/SlideShow/5.jpg",
+            "./static/SlideShow/6.jpg",
+        ];
+        let currPos = 0;
+        let timer = null;
+    
+        function strtShow() {
+            if(timer) {
+                console.log(timer, typeof timer);
+                alert("You have already started the slide show..");
+                return;
+            }
+            timer = setInterval(flowImgs, 2000);
+        }
+
+        function flowImgs() {
+            currPos = (currPos + 1) % (imgs.length);
+            document.images[0].src = imgs[currPos];
+        }
+
+        function getNextImg() {
+            currPos = currPos === imgs.length - 1 ? imgs.length - 1 : currPos + 1;
+            document.images[0].src = imgs[currPos];
+        }
+
+        function getPrevImg() {
+            currPos = currPos === 0 ? 0 : currPos - 1;
+            document.images[0].src = imgs[currPos];
+        }
+
+        function stpShow() {
+            if(!timer) {
+                alert("You haven't started the slide yet :P");
+                return;
+            }
+            clearInterval(timer);
+        }
+    </script>
+  </body>
+</html>
