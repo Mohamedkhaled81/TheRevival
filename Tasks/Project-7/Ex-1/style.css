@@ -1,0 +1,10 @@
+#disabled-area {
+    background-color: tomato;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 400px;
+    height: 400px;
+    margin: 100px auto;
+    padding: 50px;
+    text-align: center;
+}

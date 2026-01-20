@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyForm</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>
+                MyForm
+            </legend>
+            <label for="name">Name:</label>
+            <input id="name" type="text" name="name">
+            <input type="submit" value="Submit Here">
+        </fieldset>
+    </form>
+    <script>
+        let formElem = document.forms[0];
+        let inputElem = document.querySelector("#name");
+        let timer = null;
+        const afkEvent = new Event("afk");
+
+        function startTimer() {
+            timer = setInterval(function () {
+                let inptValueLength = inputElem.value.length;
+                console.log(inptValueLength, inputElem.value);
+                if(!inptValueLength) {inputElem.dispatchEvent(afkEvent);}
+            }, 5000);
+        }
+
+        function stopTimer() {
+            clearInterval(timer);
+        }
+
+        formElem.addEventListener("submit", function(event) {
+            let confirmFlag = confirm("Do you want to submit data?");
+            if(!confirmFlag){event.preventDefault();}
+        });
+
+        inputElem.addEventListener("afk", function(event) {
+            stopTimer();
+            alert("You have not entered input for 5 seconds!");
+            startTimer();
+        })
+        startTimer();
+    </script>
+</body>
+</html>

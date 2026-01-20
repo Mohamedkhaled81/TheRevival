@@ -29,19 +29,20 @@
     </div>
 <script>
     let pair = [];
+    let blck = false;
     let chosenImgs = [];
     let imgs = [
         "./static/memory Game/1.gif", "./static/memory Game/3.gif", "./static/memory Game/1.gif", "./static/memory Game/4.gif",
         "./static/memory Game/5.gif", "./static/memory Game/2.gif", "./static/memory Game/2.gif", "./static/memory Game/3.gif",
         "./static/memory Game/4.gif", "./static/memory Game/6.gif", "./static/memory Game/5.gif", "./static/memory Game/6.gif"
     ];
+    // handling quick changes!!
     function displayImg(imgElem) {
         let imgId = Number(imgElem.id);
-        if(chosenImgs.includes(imgId)) {
-            alert("You have chosen that Image.\nChoose another image..");
-            return;
-        }
+        if(blck) {alert("You can not choose more that two images at the same time!");return;}
+        if(chosenImgs.includes(imgId)) { alert("You have chosen that Image.\nChoose another image..");return;}
         pair.push([imgs[imgId], imgElem]);
+        if(pair.length === 2) {blck = true;} else {blck = false}
         imgElem.src = imgs[imgId];
         setTimeout(function () {
             if(pair.length === 2) {
@@ -53,8 +54,9 @@
                     chosenImgs.push(Number(pair[1][1].id));
                 }
                 pair = [];
+                blck = false;
             }
-        }, 500);
+        }, 800);
     }
 </script>
 </body>

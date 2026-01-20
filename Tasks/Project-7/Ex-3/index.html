@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyPress-Page</title>
+</head>
+<body>
+    <div>
+        <h2>Key-Press Events Display</h2>
+        <hr>
+        <p id="disp-kp"></p>
+    </div>
+    <div>
+        <h2>Key-down Events Display</h2>
+        <hr>
+        <p id="disp-kd"></p>
+    </div>
+    <script>
+        let dispKp = document.getElementById("disp-kp");
+        let dispKd = document.getElementById("disp-kd");
+
+        window.addEventListener("keydown", function(event) {
+            dispKd.textContent += event.key + " ";
+            console.log(event);
+        });
+
+        window.addEventListener("keypress", function(event) {
+            dispKp.textContent += event.key + " ";
+            console.log(event);
+        });
+
+        window.addEventListener("keydown", function(event) {
+            event.preventDefault();
+        })
+
+    </script>
+</body>
+</html>

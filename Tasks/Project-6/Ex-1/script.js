@@ -16,7 +16,6 @@ function getGreetingElem() {
 
 function runScript() {
     createChild();
-
     // when adding a delay custom function it doesnt work..
     childWindow.onload = function dispMssg() {
         let greetElem = getGreetingElem();
