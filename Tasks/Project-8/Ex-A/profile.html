@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile-Page</title>
+</head>
+<body>
+<script src="./cookie.js"></script>
+<script>
+    const genderVal = getCookie("gender");
+    const userName = getCookie("name");
+    const selectedColor = getCookie("color");
+    const age = getCookie("age");
+    const visted = Number(getCookie(userName + age)) + 1;
+    const genderElemPic = document.createElement("img");
+    const greetMssg = document.createElement("span");
+
+    setCookie(userName + age, String(visted));
+    greetMssg.innerHTML = "Welcome" + " <span style=color:"+selectedColor+">"  + userName + "</span> " + "you have visited this site " + "<span style=color:"+selectedColor+">" + visted + " </span>times!"
+    genderElemPic.src = genderVal === "male" ? "./cookies/1.jpg" : "./cookies/2.jpg";
+    document.body.appendChild(genderElemPic);
+    document.body.appendChild(greetMssg);
+</script>
+</body>
+</html>

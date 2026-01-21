@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <style>
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <div id="header">
+            <img src="dom.jpg" alt="hello..it rains over here:)" />
+        </div>
+        <div id="navigation">
+            <ul id="nav">
+                <li><strong>Memo</strong></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Photos</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+<script>
+    const navElement = document.getElementById("nav");
+    const imgContainer = document.getElementById("header");
+    const parentSection = document.getElementsByClassName("center")[0];
+    
+    imgContainer.children[0].style = "width:400px";
+    const clonedElem = imgContainer.cloneNode(true);
+    
+    clonedElem.id = 'cloned-' + imgContainer.id;
+    parentSection.appendChild(clonedElem);
+    
+    navElement.style = "list-style-type:circle;";
+    imgContainer.style = "text-align:right";
+    clonedElem.style = "text-align:left";
+</script>
+</body>
+</html>

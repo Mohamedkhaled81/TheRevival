@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let sum = 0;
+    function add() {
+        console.log(arguments[0], typeof arguments[0])
+        if(arguments.length !== 1) {throw ('You should pass one argument!')}
+        if(typeof arguments[0] !== 'number' || isNaN(arguments[0])) {throw ('You Should pass a < number > argument!')}
+        sum += arguments[0];
+    }
+
+    function getUserTotalSize(msg) {
+        totalSize = prompt(msg);
+        return Number(totalSize);
+    }
+
+    function getUserValue(msg) {
+        let value = prompt(msg);
+        return value
+    }
+
+    function runScript() {
+        getUserTotalSize("Enter the total size of values to be added!");
+        for(let indx=0; indx < totalSize; indx++) {
+            let value = getUserValue("Enter a value to be added!");
+            add(Number(value));
+            // add(); gives a exception
+        }
+        alert("Total is " + sum);
+    }
+
+    runScript()
+</script>
+</body>
+</html>

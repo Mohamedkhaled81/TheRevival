@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving-Pics</title>
+    <style>
+        #container {
+            position: relative;
+            border: red solid 10px;
+            width: 500px;
+            height: 500px;
+            margin-bottom: 30px;
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="top-img" style="top:440px;left:250px" src="./movingPic/TOP.JPG">
+        <img id="left-img" style="top:250px;left:20px;" src="./movingPic/icon1.gif">
+        <img id="right-img" style="top:250px;left:440px;" src="./movingPic/icon2.gif">
+    </div>
+    <div>
+        <input id="imgMotion" type="button" value="Go">
+        <input id="resetPos" type="button" value="Reset">
+    </div>
+    <script>
+        let timer = null; 
+        let reverseTopDir = false;
+        let reverseLeftDir = false;
+        let reverseRightDir = false;
+        let resetPosButton = document.getElementById("resetPos");
+        let imgMotionButton = document.getElementById("imgMotion");
+
+        let topImg = document.getElementById("top-img");
+        let leftImg = document.getElementById("left-img");
+        let rightImg = document.getElementById("right-img");
+
+        resetPosButton.addEventListener("click", resetImgPos);
+        imgMotionButton.addEventListener("click", imgMve);
+
+        function resetImgPos() {
+            topImg.style.top = "440px";
+            rightImg.style.left = "440px";
+            leftImg.style.left = "20px";
+        }
+
+        function imgMve(event) {
+            let MveFlag = event.target.value === "Go" ? true : false;
+            if (MveFlag) {
+                timer = setInterval(function () {
+                    let topImgPosY = parseInt(topImg.style.top);
+                    let rightImgPosX = parseInt(rightImg.style.left);
+                    let leftImgPosX = parseInt(leftImg.style.left);
+                    
+                    if (topImgPosY <= 20) {topDir = 1;reverseTopDir = false;}
+                    if (topImgPosY >= 440) {topDir = -1;}
+
+                    
+                    if(rightImgPosX <= 20) {rightDir = 1;reverseRightDir = false;}
+                    if(rightImgPosX >= 440) {rightDir = -1;}
+                    
+                    if(leftImgPosX >= 440) {leftDir= -1;reverseLeftDir = false;}
+                    if(leftImgPosX <= 20) {leftDir = 1;}
+                    
+                    if(reverseTopDir) {topDir = -1;}
+                    if(reverseRightDir) {rightDir = -1;}
+                    if(reverseLeftDir) {leftDir = 1;}
+                    
+                    topImg.style.top = (topImgPosY + (5 * topDir)) + "px";
+                    rightImg.style.left = (rightImgPosX + (5 * rightDir)) + "px";
+                    leftImg.style.left = (leftImgPosX + (5 * leftDir)) + "px"; 
+                }, 50);
+                event.target.value = "Stop";
+            } else {
+                clearInterval(timer);
+                if(topDir === 1) { reverseTopDir = true;}
+                if(rightDir === 1) { reverseRightDir = true;}
+                if(leftDir === -1) {reverseLeftDir = true;}
+                event.target.value = "Go";
+            }
+        }
+
+    </script>
+</body>
+</html>

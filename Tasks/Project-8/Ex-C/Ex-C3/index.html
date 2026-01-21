@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card-Generator</title>
+    <link rel="stylesheet" href="./static/style.css" />
+  </head>
+  <body>
+    <h1>Generate Get Well Soon Card</h1>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <label for="0">
+                <img  src="./static/CardMaker/gws.jpg" />
+            </label>
+          </td>
+          <td>
+            <label for="1">
+                <img  src="./static/CardMaker/gws2.jpg" />
+            </label>
+          </td>
+          <td>
+            <label for="2">
+                <img  src="./static/CardMaker/gws3.jpg" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input name="card" id="0" type="radio" onclick="selectCard(this.id)" />
+          </td>
+          <td>
+            <input name="card"  id="1" type="radio" onclick="selectCard(this.id)"/>
+          </td>
+          <td>
+            <input name="card" id="2" type="radio" onclick="selectCard(this.id)"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="3">
+                <img  src="./static/CardMaker/gwsf.jpg" />
+            </label>
+          </td>
+          <td>
+            <label for="4">
+                <img  src="./static/CardMaker/gwsf2.jpg" />
+            </label>
+          </td>
+          <td>
+            <label for="5">
+                <img  src="./static/CardMaker/gwsf3.jpg" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input  name="card" id="3" type="radio" onclick="selectCard(this.id)"/>
+          </td>
+          <td>
+            <input  name="card" id="4" type="radio" onclick="selectCard(this.id)"/>
+          </td>
+          <td>
+            <input  name="card" id="5" type="radio" onclick="selectCard(this.id)"/>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <h2>Personal Message</h2>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <textarea onchange="fetchText(this.value)"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input type="button" value="Generate Card" onclick="generateCard()">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="./static/script.js"></script>
+  </body>
+</html>

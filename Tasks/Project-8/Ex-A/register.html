@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+<style>
+    .inputs {
+        margin-bottom: 30px;
+    }
+    #male {
+        margin-right: 200px;
+    }
+    .button {
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="inputs">
+            <b><label for="name">Enter your name:</label></b>
+            <input type="text" id="name">
+        </div>
+        <div class="inputs">
+            <b><label for="age">Enter your age:</label></b>
+            <input type="number" id="age" min="1">
+        </div>
+        <div class="inputs">
+            <label for="male">
+                <img src="./cookies/1.jpg">
+            </label>
+            <label for="female">
+                <img src="./cookies/2.jpg">
+            </label>
+        </div>
+        <div class="inputs">
+            <input id="male" name="Gender" value="male" type="radio" onclick="radioChecked(this.value)">
+            <input id="female" name="Gender" value="female" type="radio" onclick="radioChecked(this.value)">
+        </div>
+        <div class="inputs">
+            <b><label>Select your favorite color:</label></b>
+            <select name="color" onchange="colorSelected(this.value)">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </div>
+        <div class="button">
+            <input type="button" value="Register" onclick="registerMe()">
+        </div>
+    </div>
+    <script src="./cookie.js"></script>
+    <script>
+        const nameElem = document.getElementById("name");
+        const ageElem = document.getElementById("age");
+        let genderVal = null, selectedColor = null;
+        let nameValue = null, ageValue = null;
+
+        function colorSelected(colorValue){
+            selectedColor = colorValue;
+        }
+        
+        function radioChecked(radioElemValue) {
+            genderVal = radioElemValue;
+        }
+        
+        function registerMe() {
+            nameValue = nameElem.value;
+            ageValue = ageElem.value;
+            if(nameValue.length === 0) {alert("You Should Enter Your name");return;}
+            if(ageValue.length === 0) {alert("You Should Enter Your age");return;}
+            if(selectedColor === null) {selectedColor = 'red'}
+            if(genderVal === null) {alert("Please specify your gender!");return;}
+            setUserCookies();
+            window.location.replace("./profile.html");
+        };
+
+        function setUserCookies() {
+            setCookie("name", nameValue);
+            setCookie("age", ageValue);
+            setCookie("gender", genderVal);
+            setCookie("color", selectedColor);
+            if(!hasCookie(nameValue + ageValue)){
+                setCookie(nameValue + ageValue, '0');
+            }
+        }
+    </script>
+</body>
+</html>
