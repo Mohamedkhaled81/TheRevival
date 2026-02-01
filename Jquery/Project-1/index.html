@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-buttons">
+        <input id="about" type="button" value="About" />
+        <input id="gallary" type="button" value="Gallary" />
+        <input id="services" type="button" value="services" />
+        <input id="complain" type="button" value="Complain" />
+      </div>
+      <div>
+        <ul class="hidden" id="service-list">
+          <li class="service-items">Item #1</li>
+          <li class="service-items">Item #2</li>
+          <li class="service-items">Item #3</li>
+          <li class="service-items">Item #4</li>
+        </ul>
+      </div>
+      <div id="about-container" class="hidden inner-container">
+        <p>Story About Snow Man</p>
+      </div>
+      <div id="gallary-container" class="hidden inner-container">
+        <img id="left-arrow" class="arrow-img" src="./static/images/left.png" />
+        <img id="main-img" src="./static/images/1.jpg" />
+        <img
+          id="right-arrow"
+          class="arrow-img"
+          src="./static/images/right.png"
+        />
+      </div>
+      <div id="complain-container" class="hidden inner-container">
+        <div class="user-input">
+          <label for="name">Name:</label>
+          <input id="name" name="name" type="text" />
+        </div>
+        <div class="user-input">
+          <label for="email">Email:</label>
+          <input id="email" name="email" type="email" />
+        </div>
+        <div class="user-input">
+          <label for="phone">Phone:</label>
+          <input id="phone" name="phone" type="number" />
+        </div>
+        <div class="user-input">
+          <label>Complain:</label>
+        </div>
+        <textarea></textarea>
+        <div>
+          <input type="submit" value="Send" />
+        </div>
+      </div>
+      <div id="result-complain" class="hidden inner-container">
+        <br />
+        <span>Your Complain is</span><b><p id="complain-text"></p></b>
+        <br />
+        <span>Your Name is</span><b><p id="name-text"></p></b>
+        <br />
+        <span>Your email is</span><b><p id="email-text"></p></b>
+        <br />
+        <span>Your phone is</span><b><p id="phone-text"></p></b>
+        <br />
+        <div>
+          <input id="back" type="button" value="Back to edit" />
+        </div>
+      </div>
+    </div>
+    <script src="./static/external/jquery/jquery.js"></script>
+    <script src="./static/js/script.js"></script>
+  </body>
+</html>
