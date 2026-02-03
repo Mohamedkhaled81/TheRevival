@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #container {
+            width: 600px;
+            margin: 20px auto;
+        }
+
+        #container video {
+            width: 100%;
+            border-radius: 5px;
+        }
+        #slider {
+            padding: 4px;
+            width: 80%;
+        }
+        #video-slider{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #video-properties {
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        #speed-container {
+            margin-top: 10px;
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        input[type="button"] {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <video src="./media/frozen.mp4" poster="./media/frozen_Poster.jpg"></video>
+        <div id="video-slider">
+            <input id="slider" type="range" value="0" step="any">
+            <span id="video-time">0:00/0:00</span>
+        </div>
+        <div id="video-properties">
+            <input id="play" type="button" value="Play">
+            <input id="stop" type="button" value="Stop">
+            <input id="restart" type="button" value="<<">
+            <input id="lastFive" type="button" value="<">
+            <input id="nextFive"  type="button" value=">">
+            <input id="end" type="button" value=">>">
+            <span>volume</span>
+            <input id="volume-slider" type="range" value="0.7" min="0" max="1" step="0.1">
+            <input id="mute" type="button" value="Mute">
+            <div id="speed-container">
+                <span>Speed</span>
+                <input id="speed-slider" type="range" min="0" max="2" step="0.25" value="1">
+            </div>
+    </div>
+    <script>
+        let videoElem = document.getElementsByTagName("video")[0];
+        let videoTimeElem = document.getElementById("video-time");
+        let volumeSlider = document.getElementById("volume-slider");
+        let speedSlider = document.getElementById("speed-slider");
+        let videoSlider = document.getElementById("slider");
+        
+        let playButton = document.getElementById("play");
+        let stopButton = document.getElementById("stop");
+        let restartButton = document.getElementById("restart");
+        let endButton = document.getElementById("end");
+        let nextFiveButton = document.getElementById("nextFive");
+        let lastFiveButton = document.getElementById("lastFive");
+        let muteButton = document.getElementById("mute");
+
+        videoElem.addEventListener("timeupdate", function(event){
+            videoSlider.value = videoElem.currentTime;
+            videoTimeElem.textContent = formateTime(videoElem.currentTime) + "/" + videoDuration;
+        })
+
+        playButton.addEventListener("click", function(event) {
+            videoDuration = formateTime(videoElem.duration);
+            videoTimeElem.textContent = '0:00/' + videoDuration;
+            videoElem.play();
+        })
+
+        stopButton.addEventListener("click", function(event){
+            videoElem.pause();
+        })
+
+        muteButton.addEventListener("click", function(event) {
+            videoElem.muted = !videoElem.muted ? true : false;
+            event.target.value = videoElem.muted ? "Un-Mute" : "Mute";
+        })
+
+        restartButton.addEventListener("click", function(event){
+            videoElem.currentTime = 0;
+        })
+
+        endButton.addEventListener("click", function(event) {
+            videoElem.currentTime = videoElem.duration;
+        })
+
+        nextFiveButton.addEventListener("click", function(event) {
+            videoElem.currentTime = (parseInt(videoElem.currentTime) + 5);
+        })
+
+        lastFiveButton.addEventListener("click", function(event){
+            videoElem.currentTime = (parseInt(videoElem.currentTime) - 5);
+        })
+
+        videoSlider.addEventListener("change", function(event) {
+            let sliderVal = event.target.value;
+            videoElem.currentTime = sliderVal;
+        })
+
+        volumeSlider.addEventListener("change", function(event) {
+            videoElem.volume = event.target.value;
+        })
+
+        speedSlider.addEventListener("change", function(event){
+            videoElem.playbackRate = event.target.value
+        })
+
+        function formateTime(timeInSecondsVal){
+            let minTime = Math.floor(timeInSecondsVal / 60);
+            let secTime = Math.floor(timeInSecondsVal % 60);
+            
+            return minTime+ ":" + (secTime.toString().length === 1 ? "0"+secTime.toString() : secTime);
+        }
+    </script>
+</body>
+</html>

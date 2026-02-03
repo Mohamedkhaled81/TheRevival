@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #container {
+            width: 600px;
+            margin: 15px auto;
+        }
+
+        #red {
+            color: red;
+            padding: 10px;
+        }
+        #green {
+            color: green;
+            padding: 10px;
+        }
+        #blue {
+            color: blue;
+            padding: 10px;
+        }
+        label {
+            display: block;
+        }
+        p {
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="color-values">
+            <div id="red">
+                <label>Red:</label>
+                <input id="red-slider" type="range" value="0" max="255" min="0">
+            </div>
+            <div id="green">
+                <label>green:</label>
+                <input id="green-slider"  type="range" value="0" max="255" min="0">
+            </div>
+            <div id="blue">
+                <label>blue:</label>
+                <input id="blue-slider"  type="range" value="0" max="255" min="0">
+            </div>
+        </div>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit beatae consequuntur, dignissimos, autem ab quibusdam veritatis accusamus facere laudantium nam impedit blanditiis minus aut quasi hic dolore vitae, rem perferendis.
+        </p>
+    </div>
+    <script>
+        let paraElem = document.getElementsByTagName("p")[0];
+        document.getElementById("color-values").addEventListener("input", function(event) {
+            let redVal = document.getElementById("red-slider").value;
+            let greenVal = document.getElementById("green-slider").value;
+            let blueVal = document.getElementById("blue-slider").value;
+
+            paraElem.style.color="rgb(" + redVal + "," + greenVal + "," +blueVal + ")"
+        })
+    </script>
+</body>
+</html>
