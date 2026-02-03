@@ -1,0 +1,17 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+}
+#hello {
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border: solid 2px black;
+    width: 100px;
+    font-weight: bold;
+}
+
+#bunny {
+    position: absolute;
+}
