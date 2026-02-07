@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+        canvas {
+            margin: 50px auto;
+            display: block;
+            border: gray 3px solid;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        /**@type{HTMLCanvasElement} */
+        const canvas = document.getElementsByTagName("canvas")[0];
+        const ctx = canvas.getContext("2d");
+        let angle = 0, direction = -1;
+
+        canvas.width = 700;
+        canvas.height = 550;
+
+        ctx.fillStyle = "rgba(50, 100, 255, 0.4)";
+
+        function animate() {
+            ctx.save();
+            ctx.translate(canvas.width / 2, canvas.height / 2);
+            ctx.rotate(angle);
+            ctx.fillRect(7, 7, 150, 40);
+            ctx.restore();
+            console.log(direction);
+            angle += ((Math.PI / 6) * direction);
+            
+            if(Math.abs((angle)) > Math.PI * 2) {
+                cycles = 0;
+                direction *= -1;
+                angle = 0;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        setInterval(animate, 100);
+    </script>
+</body>
+</html>

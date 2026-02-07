@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+        canvas {
+            margin: 50px auto;
+            display: block;
+            border: gray 3px solid;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        /**@type{HTMLCanvasElement} */
+
+        const canvas = document.getElementsByTagName("canvas")[0];
+        const ctx = canvas.getContext("2d");
+        canvas.width = 700;
+        canvas.height = 550;
+        
+        const centerX = canvas.width / 2, centerY = canvas.height / 2;
+        
+        const grad = ctx.createConicGradient(0, centerX, centerY);
+        let counterState = false;
+        grad.addColorStop(0, "red");
+        grad.addColorStop(0.4, "yellow");
+        grad.addColorStop(0.5, "green")
+        grad.addColorStop(1, "blue");
+
+        function animate() {
+            counterState = !counterState;
+            console.log(counterState);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, centerX / 2, 0, Math.PI, counterState);
+            ctx.fillStyle = grad;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        setInterval(animate, 1000);
+
+    </script>
+</body>
+</html>

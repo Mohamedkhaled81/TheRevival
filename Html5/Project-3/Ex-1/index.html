@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+        canvas {
+            margin: 50px auto;
+            display: block;
+            border: gray 3px solid;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        /**@type{HTMLCanvasElement} */
+        const canvas = document.getElementsByTagName("canvas")[0];
+
+        canvas.width = 700;
+        canvas.height = 450;
+
+        const ctx = canvas.getContext('2d');
+
+        const img = new Image();
+        img.src = "./Grus-Plan.jpg";
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
+            ctx.font = "bold 25px courier";
+            ctx.fillStyle = "white";
+            ctx.textAlign= "center";
+            ctx.shadowColor = "rgba(0, 0, 0, 1)";
+            ctx.shadowOffsetX = 4;
+            ctx.shadowOffsetY = 4;
+            ctx.shadowBlur = 5;
+            ctx.fillText("When a bug appears during presenting my tasks!", canvas.width / 2,(canvas.height / 2) + 19);
+        }
+
+    </script>
+</body>
+</html>
