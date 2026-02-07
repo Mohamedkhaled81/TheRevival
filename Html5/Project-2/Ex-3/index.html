@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: red solid 3px;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500" id="canva"></canvas>
+    <script>
+        let x = y = 0;
+        let timer = null;
+        /**@type{HTMLCanvasElement}*/
+        let canvas = document.getElementById("canva");
+        let context = canvas.getContext("2d");
+        let totalWidth = canvas.width, totalHeight = canvas.height;
+
+        x += 10; y += 10;
+        context.beginPath();
+        context.strokeStyle = "black";
+        context.lineWidth = 3;
+
+        context.moveTo(0, 0);
+        moveLine();
+
+        function moveLine() {
+            timer = setInterval(function () {
+                x += 5; y += 5;
+                if(x === totalWidth && y === totalHeight) {
+                    context.closePath();
+                    alert("You Have Reached The End!");
+                    clearInterval(timer);
+                }
+                context.lineTo(x, y);
+                context.stroke();
+            }, 50)
+        }
+
+    </script>
+</body>
+</html>

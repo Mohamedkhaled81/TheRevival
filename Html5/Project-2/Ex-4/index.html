@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        canvas {
+            border: solid 3px black;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="800" height="600" id="canva"></canvas>
+    <script>
+        /**@type{HTMLCanvasElement} */
+        let canvas = document.getElementById("canva");
+        let context = canvas.getContext("2d");
+        let linearGrad = context.createLinearGradient(100, 50, 100, 500);
+        linearGrad.addColorStop(0, "cyan");
+        linearGrad.addColorStop(0.6, "white");
+        linearGrad.addColorStop(0.6, "green");
+        linearGrad.addColorStop(1, "white")
+
+        context.beginPath();
+        context.fillStyle = linearGrad;
+        context.fillRect(100, 50, 600, 500);
+        context.closePath();
+
+        context.beginPath();
+        context.fillStyle = "black";
+        context.lineWidth = 3;
+        context.moveTo(200, 350);
+        context.lineTo(200, 160);
+        context.lineTo(600, 160);
+        context.lineTo(600, 350);
+        context.stroke();
+    </script>
+</body>
+</html>
