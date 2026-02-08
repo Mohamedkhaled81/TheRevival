@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+        }
+        #container-nav {
+            display: flex;
+            background-color: antiquewhite;
+            padding: 15px;
+            border-radius: 5px;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        #container-section {
+            display: flex;
+            gap: 10px;
+
+        }
+        .section {
+            border: #444 solid 2px;
+            display: flex;
+            text-align: center;
+            flex-flow: wrap column;
+            justify-content: space-between;
+            border-radius: 5px;
+            width: 50%;
+        }
+        .paragraph {
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            padding: 10px;
+            background-color: antiquewhite;
+        }
+        @media (max-width: 700px) {
+            #container-nav {
+                flex-direction: column;
+                gap: 10px 10px;
+            }
+            #container-section {
+                flex-direction: column;
+            }
+
+            .section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="container-nav">
+            <div class="container-nav-child">Home</div>
+            <div class="container-nav-child">About</div>
+            <div class="container-nav-child">Services</div>
+            <div class="container-nav-child">Contact</div>
+        </div>
+        <div id="container-section">
+            <div class="section">
+                <div class="paragraph"> architecto amet et rem eos doloremque obcaecati corporis ipsam, unde fuga vel sequi.</div>
+                <div class="footer">Footer</div>
+            </div>
+            <div class="section">
+                <div class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse porro recusandae maiores tempore quis distinctio vero corrupti architecto amet et rem eos doloremque obcaecati corporis ipsam, unde fuga vel sequi.</div>
+                <div class="footer">Footer</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
