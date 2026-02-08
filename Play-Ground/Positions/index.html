@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+            margin: 0;
+        }
+        .box {
+            border-radius: 5px;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .color-red {
+/*            position: absolute;
+            top: 150px;
+            left: 100px; */
+            background-color: red;
+        }
+        .color-green {
+/*             position: relative;
+            top: 10px;
+            left: 10px; */
+            background-color: green;
+        }
+        .color-blue {
+/*             position: fixed;
+            top:100px;
+            left: 100px;*/
+            background-color: blue;
+        }
+        .color-yellow {
+/*             position: sticky;
+            top:50px; */
+            width: 500px;
+            height: 50vh;
+            background-color: yellow;
+        }
+        .child {
+            position: relative;
+            width: 10%;
+            height: 10%;
+            top:10px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="box color-red"></div>
+    <div class="box color-blue"></div>
+    <div class="box color-green"></div>
+    <div class="box color-yellow">
+        <div class="child">
+            child
+        </div>
+    </div>
+</body>
+</html>
