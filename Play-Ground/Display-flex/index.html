@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container {
+        display: flex;
+        /* FLEX PLAYGROUND — change these */
+        width: 50vw;
+        height: 300px;
+        border: 3px solid #333;
+        margin: 50px auto;
+/*         flex-wrap: wrap;
+        flex-direction: row-reverse; */
+        flex-flow: row-reverse wrap;
+        justify-content: center;
+        gap:10px;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .red {
+        background-color: crimson;
+        order: 2;
+        align-self: center;
+    }
+
+    .blue {
+        background-color: royalblue;
+        flex-grow:1;
+    }
+
+    .green {
+        background-color: seagreen;
+        align-self: center;
+        flex-grow: 1;
+    }
+
+    </style>
+    </head>
+<body>
+<div class="container">
+  <div class="box red">1</div>
+  <div class="box blue">2</div>
+  <div class="box green">3</div>
+</div>
+</body>
+</html>

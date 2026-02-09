@@ -27,18 +27,18 @@
             border: #444 solid 2px;
             display: flex;
             text-align: center;
-            flex-flow: wrap column;
+            flex-direction: column;
             justify-content: space-between;
             border-radius: 5px;
-            width: 50%;
-        }
-        .paragraph {
-            padding: 5px;
-            margin-bottom: 20px;
+            flex: 1;
         }
         .footer {
             padding: 10px;
             background-color: antiquewhite;
+        }
+        .paragraph {
+            padding: 10px;
+            margin-bottom: 30px;
         }
         @media (max-width: 700px) {
             #container-nav {
@@ -47,10 +47,6 @@
             }
             #container-section {
                 flex-direction: column;
-            }
-
-            .section {
-                width: 100%;
             }
         }
     </style>
