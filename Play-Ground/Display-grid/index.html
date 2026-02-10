@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Grid Study Template</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .grid-container {
+      margin: 50px auto;
+      width: 90%;
+      max-width: 900px;
+      height: 500px;
+
+      display: grid;
+
+      /* 👇 PLAY HERE */
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px;
+
+      background: #222;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .grid-item {
+      background: #4caf50;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+    }
+
+    /* Uncomment and experiment 👇 */
+    /*
+    .item-1 {
+      grid-column: 1 / 4;
+    }
+
+    .item-2 {
+      grid-row: 2 / 4;
+    }
+    */
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <div class="grid-item item-1">1</div>
+    <div class="grid-item item-2">2</div>
+    <div class="grid-item item-3">3</div>
+    <div class="grid-item item-4">4</div>
+    <div class="grid-item item-5">5</div>
+    <div class="grid-item item-6">6</div>
+    <div class="grid-item item-7">7</div>
+    <div class="grid-item item-8">8</div>
+    <div class="grid-item item-9">9</div>
+  </div>
+
+</body>
+</html>
