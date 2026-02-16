@@ -1,0 +1,40 @@
+$primary-color: red;
+$secondry-color: blue;
+
+
+.main {
+    .main-title {
+        color: $primary-color;
+    }
+
+    .main-subtitle {
+        color: $secondry-color;
+    }
+
+    .main-btn {
+        transition: background-color 2s;
+        background-color: $primary-color;
+    }
+
+    .main-btn:hover {
+        background-color: $secondry-color;
+    }
+}
+
+$fonts:(18, 16, 14);
+@each $font in $fonts{
+    .font-#{$font}px{
+        font-size: $font *1px;
+    }
+}
+
+.finish-btn {
+    width: 100%;
+}
+
+@media (max-width:820px) {
+    .finish-btn {
+        width: 50%;
+    }
+}
+

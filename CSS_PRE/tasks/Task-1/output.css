@@ -1,0 +1,37 @@
+.main .main-title {
+  color: red;
+}
+.main .main-subtitle {
+  color: blue;
+}
+.main .main-btn {
+  transition: background-color 2s;
+  background-color: red;
+}
+.main .main-btn:hover {
+  background-color: blue;
+}
+
+.font-18px {
+  font-size: 18px;
+}
+
+.font-16px {
+  font-size: 16px;
+}
+
+.font-14px {
+  font-size: 14px;
+}
+
+.finish-btn {
+  width: 100%;
+}
+
+@media (max-width: 820px) {
+  .finish-btn {
+    width: 50%;
+  }
+}
+
+/*# sourceMappingURL=output.css.map */

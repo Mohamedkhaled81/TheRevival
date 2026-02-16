@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-3</title>
+  </head>
+  <body>
+    <script>
+        const fruits = ["apple", "strawberry", "banana", "orange", "mango"];
+
+        const stringCond = fruits.every(fruit => typeof fruit === "string");
+        console.log(stringCond);
+
+        const strtWithACond = stringCond && fruits.some(fruit => fruit[0].toLowerCase() === "a");
+        console.log(strtWithACond || "Array Contains invalid Data!");
+
+        const bAndSFruits = stringCond && fruits.filter(fruit => fruit[0].toLowerCase() === "b" || fruit[0].toLowerCase() === "s");
+        console.log(bAndSFruits || "Array Contains invalid Data!");
+
+        const likedFruits = stringCond && fruits.filter(fruit => fruit === "orange" || fruit === "apple").map(fruit =>  fruit + "-liked");
+        console.log(likedFruits || "Array Contains invalid Data!");
+
+        stringCond && likedFruits.forEach(fruit => console.log(fruit + "MK"));
+/* 
+let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+
+  showList() {
+    this.students.forEach(
+        (function(self) {
+            return function (student) {
+                console.log(self);
+                alert(self.title + ": " + student);
+            }
+        })(this));
+    },
+}; */
+
+/* let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+
+  showList() {
+    (function(self) {
+      self.students.forEach(function(student) {
+        alert(self.title + ": " + student);
+      });
+    })(this); // <-- pass 'this' to the IIFE
+  },
+}; */
+
+group.showList();
+
+    </script>
+  </body>
+</html>

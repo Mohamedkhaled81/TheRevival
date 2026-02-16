@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [1, 2, 3, 4];
+
+        // Every Array Method
+        // takes callback fun and apply a condition up on the array elements..
+        // returns true if all elements apply the condition..
+        const everyCond = arr.every(num => num % 2 === 0);
+        console.log(everyCond);
+
+        // Some Array Method
+        // takes callback fun and apply a condition up on the array elements..
+        // returns true if some elements apply the condition..
+        const someCond = arr.some(num => num % 2 === 0);
+        console.log(someCond);
+
+        // Map Array Method
+        // returns a new Array but it's element is modified / affected by changes in the callback fun
+        const newMapArr = arr.map(num => num * 2);
+        console.log(newMapArr, arr);
+
+        // filer Array Method
+        // returns a new array but with items that sutisfy the condition of the callback fun
+        const newFilteredArr = arr.filter(num => num % 2 === 1)
+        console.log(newFilteredArr, arr);
+
+        // find Array Method
+        // returns the first found item else returns undefind 
+        const foundItem = arr.find(num => num > 0);
+        const notFoundItem = arr.find(num => num < 0);
+        console.log(foundItem, notFoundItem)
+
+        // foreach Array Method
+        arr.forEach((num, indx) => {arr[indx] = num * 2});
+        console.log(arr)
+    </script>
+</body>
+</html>
