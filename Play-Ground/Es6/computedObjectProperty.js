@@ -1,4 +1,3 @@
-
 const propertyName = "x";
 
 const objOne = {
