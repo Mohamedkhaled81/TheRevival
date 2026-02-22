@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        canvas {
+            width: 60%;
+            display: block;
+            margin:50px auto;
+            border-radius: 15px;
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <script src="./script.js"></script>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+        
+        canvas.width = canvas.clientWidth;
+        canvas.height = 600;
+
+        const square = new Square(ctx, 10, 10, 200, "red");
+        console.log(square.toString());
+        square.drawShape();
+
+        const rectangle = new Rectangle(ctx, 75, 60, 800, 300, "blue");
+        console.log(rectangle.toString());
+        rectangle.drawShape();
+
+        const circle = new Circle(ctx, 150, 150, 100, "yellow");
+        console.log(circle.toString());
+        circle.drawShape();
+
+        const triangle = new Triangle(ctx, {x: 30, y: 60}, {x: 80, y: 70}, {x: 50, y: 100}, "green");
+        console.log(triangle.toString());
+        triangle.drawShape();
+    </script>
+</body>
+</html>
