@@ -1,0 +1,125 @@
+🧠 Now Let’s Explain the Concepts
+1️⃣ What is a Module?
+
+In TypeScript (and modern JavaScript), each file is a module if it contains:
+
+export
+
+or
+
+import
+
+So:
+
+IParent.ts → Module
+
+Parent.ts → Module
+
+Modules allow you to:
+
+Split code into separate files
+
+Reuse code
+
+Avoid global variables
+
+Organize large applications
+
+2️⃣ What is an Interface?
+
+An interface is a contract.
+
+interface IParent {
+  name: string;
+}
+
+It says:
+
+"Any object that claims to be an IParent must have a name property of type string."
+
+It does NOT create real JavaScript code.
+
+After compilation to JS, the interface disappears.
+
+3️⃣ What does implements mean?
+export class Parent implements IParent
+
+This means:
+
+"Parent must follow the rules defined in IParent."
+
+If you remove name from the class:
+
+export class Parent implements IParent {
+  constructor() {}
+}
+
+TypeScript will throw an error:
+
+Class 'Parent' incorrectly implements interface 'IParent'
+
+Because you broke the contract.
+
+4️⃣ Why use import type?
+import type { IParent } from "../Interfaces/IParent";
+
+Because:
+
+Interfaces exist only during development.
+
+They are removed in compiled JS.
+
+import type ensures no runtime import is generated.
+
+If you used normal import:
+
+import { IParent } from ...
+
+It may generate unnecessary JS code.
+
+🔥 What Was Wrong in the Original Code?
+
+Original:
+
+import type IParent = require("../Interfaces/IParent")
+
+That is:
+
+Old TypeScript internal module syntax
+
+Not modern ES module style
+
+Harder to read
+
+Not recommended anymore
+
+Modern way:
+
+import type { IParent } from "../Interfaces/IParent";
+
+Much cleaner.
+
+🏗 How Everything Connects
+IParent.ts
+    ↓
+Defines contract (shape)
+
+Parent.ts
+    ↓
+Implements contract
+    ↓
+Creates actual object
+🧩 Practical Example Usage
+import { Parent } from "./Parent";
+
+const p = new Parent("Omar");
+
+console.log(p.name); // Omar
+
+TypeScript ensures:
+
+Parent has a name
+
+name is a string
+
+No missing properties
