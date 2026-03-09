@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2022",          // modern JS features like optional chaining, async/await
+    "module": "commonjs",         // compile imports/exports to CommonJS
+    "rootDir": "./src",           // your TS source folder
+    "outDir": "./dist",           // compiled JS output
+    "strict": true,               // strict type checking
+    "esModuleInterop": true,      // allows default imports from CommonJS modules
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "declaration": true,          // optional: generates .d.ts files
+    "sourceMap": true             // optional: generates source maps for debugging
+  }
+}
