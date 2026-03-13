@@ -69,9 +69,19 @@ const server = http.createServer(async (req, res) => {
         else if (pathname.toLowerCase() === '/students') {
             const studentsPath = path_1.default.join(__dirname, '..', '..', 'data', 'students.json');
             const studentData = await readFile(studentsPath);
+            let formatedData = JSON.parse(studentData);
+            const isActiveParam = url.searchParams.get('isActive');
+            if (isActiveParam !== null) {
+                if (!["true", "false"].includes(isActiveParam)) {
+                    throw new Error(ErrorMssgs.BADREQ);
+                }
+                const isActive = isActiveParam === "true";
+                formatedData = formatedData.filter((student) => student.isActive === isActive);
+            }
+            let responseData = JSON.stringify(formatedData);
             res.statusCode = 200;
             res.setHeader('Content-Type', 'application/json');
-            res.end(studentData);
+            res.end(responseData);
         }
         else {
             throw new Error(ErrorMssgs.BADREQ);
@@ -81,6 +91,7 @@ const server = http.createServer(async (req, res) => {
         if (err.message === ErrorMssgs.BADREQ) {
             res.statusCode = 400;
             res.end('<h1>Bad Request</h1>');
+            return;
         }
         res.statusCode = 500;
         res.setHeader('Content-Type', 'text/plain');
