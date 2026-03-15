@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background-color: whitesmoke;
+    color: #444;
+}
+
+form {
+    width: 25%;
+    margin: 70px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    padding: 50px;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: larger;
+}
+
+legend {
+    margin-bottom: 30px;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+input {
+    width: 100%;
+    font-family: "Courier New", Courier, monospace;
+    font-size: large;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+input:valid:not(:placeholder-shown) {
+    border: 2px solid green;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border: 2px solid red;
+}
+
+button {
+    margin-top: 40px;
+    width: 100%;
+    font-family: "Courier New", Courier, monospace;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #444;
+    color: whitesmoke;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+button:hover {
+    background-color: #323232;
+}
+
+.section {
+    margin-bottom: 15px;
+    width: 100%;
+}

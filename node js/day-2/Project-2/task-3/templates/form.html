@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register-Page</title>
+    <link rel="stylesheet" href="../static/formStyle.css">
+  </head>
+  <body>
+    <form action="http://127.0.0.1:7000/form" method="post">
+      <legend>Registration</legend>
+
+      <div class="section">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          id="name"
+          required
+          pattern="^[A-Za-z\s]{6,20}$"
+          title="Enter letters only (A-Z, a-z), minimum 6 and maximum 20 characters"
+        />
+      </div>
+
+      <div class="section">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          id="email"
+          required
+          pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,3}$"
+          title="Enter a valid email address, e.g., example@mail.com"
+        />
+      </div>
+
+      <div class="section">
+        <label for="mobile">Mobile:</label>
+        <input
+          type="text"
+          name="mobile"
+          placeholder="Mobile"
+          id="mobile"
+          required
+          pattern="^(010|011|012|015)[0-9]{8}$"
+          title="Enter an 11-digit Egyptian mobile number starting with 010, 011, 012, or 015"
+        />
+      </div>
+
+      <div class="section">
+        <label for="address">Address:</label>
+        <input
+          type="text"
+          name="address"
+          placeholder="Address"
+          id="address"
+          required
+          pattern="^[A-Za-z0-9\s,.-#]{5,100}$"
+          title="Enter your address using letters, numbers, spaces, commas, periods, hyphens, or # (5–100 characters)"
+        />
+      </div>
+
+      <div class="section">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>

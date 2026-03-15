@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome-Page</title>
+    <link rel="stylesheet" href="../static/welcomeStyle.css">
+  </head>
+  <body>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <h3>Your Information:-</h3>
+        <div class="text_container">
+            <p><b>Name:</b> {{%name%}}</p>
+            <p><b>Email:</b> {{%email%}}</p>
+            <p><b>Mobile:</b> {{%mobile%}}</p>
+            <p><b>address:</b> {{%address%}}</p>
+        </div>
+        <div class="button_container">
+            <button>Show All</button>
+        </div>
+    </div>
+    <script src="../static/welcomeScript.js"></script>
+  </body>
+</html>
